@@ -32,7 +32,7 @@
             z-index: 10;
         }
         #toolbar button {
-            background: #3ddc84; /* Android green color */
+            background: #3ddc84;
             color: #000;
             border: none;
             padding: 6px 12px;
@@ -57,8 +57,8 @@
         <button onclick="toggleFullscreen()">Toggle Fullscreen (F11)</button>
     </div>
 
-    <!-- v86 emulator iframe configured for Android x86 profile -->
-    <iframe src="https://copy.sh/v86/?profile=android1.6" allowfullscreen="true" sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-forms"></iframe>
+    <!-- Correct profile parameter for Android 1.6 in v86 -->
+    <iframe src="https://copy.sh/v86/?profile=android" allowfullscreen="true" sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-forms"></iframe>
 
     <script>
         function toggleFullscreen() {
