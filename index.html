@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android 1.6 Donut Online</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        #toolbar {
+            height: 40px;
+            background: #222;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+            font-family: sans-serif;
+            font-size: 14px;
+            border-bottom: 1px solid #444;
+            z-index: 10;
+        }
+        #toolbar button {
+            background: #3ddc84; /* Android green color */
+            color: #000;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #toolbar button:hover {
+            background: #32b36c;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100vh - 40px);
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="toolbar">
+        <span>🤖 <b>Android 1.6 Donut Emulator</b></span>
+        <button onclick="toggleFullscreen()">Toggle Fullscreen (F11)</button>
+    </div>
+
+    <!-- v86 emulator iframe configured for Android x86 profile -->
+    <iframe src="https://copy.sh/v86/?profile=android1.6" allowfullscreen="true" sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-forms"></iframe>
+
+    <script>
+        function toggleFullscreen() {
+            const elem = document.documentElement;
+            if (!document.fullscreenElement) {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.webkitRequestFullscreen) {
+                    elem.webkitRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
