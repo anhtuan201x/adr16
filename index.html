@@ -31,6 +31,10 @@
             border-bottom: 1px solid #444;
             z-index: 10;
         }
+        .controls {
+            display: flex;
+            gap: 10px;
+        }
         #toolbar button {
             background: #3ddc84;
             color: #000;
@@ -53,8 +57,11 @@
 <body>
 
     <div id="toolbar">
-        <span>🤖 <b>Android 1.6 Donut Emulator</b></span>
-        <button onclick="toggleFullscreen()">Toggle Fullscreen (F11)</button>
+        <span>🤖 <b>Android 1.6 Donut Emulator</b> (Click inside screen to focus keyboard)</span>
+        <div class="controls">
+            <span style="font-size: 12px; line-height: 28px; color: #aaa;">If stuck: Type 'boot' or 'exit'</span>
+            <button onclick="toggleFullscreen()">Toggle Fullscreen (F11)</button>
+        </div>
     </div>
 
     <!-- Embedded v86 android profile -->
